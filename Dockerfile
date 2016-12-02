@@ -7,13 +7,14 @@ LABEL author="lenciel"
 LABEL author_email="lenciel@gmail.com"
 
 RUN apk add --update \
+    --repository http://mirrors.ustc.edu.cn/alpine/v3.4/main/ \
     nginx \
-    supervisor \ 
+    supervisor \
     python-dev \
     build-base \
     linux-headers \
     pcre-dev \
-    py-pip \ 
+    py-pip \
     vim \
   && rm -rf /var/cache/apk/* && \
   chown -R nginx:www-data /var/lib/nginx
